@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+
+body {
+    background: black;
+    font-family: 'Gruppo';
+    color: white;
+}
+
+#portrait-div {
+    width: 100vw;
+    height: 100vh;
+}
+
+#portrait {
+    margin: auto;
+    position: relative;
+    padding-left: 16em;
+    bottom: 0;
+    opacity: 55%;
+    min-height: 1037px;
+    transition: transform 3000ms linear, opacity 3000ms linear;
+}
+
+.greeting {
+    position: fixed;
+    top: 10em;
+    left: 50px;
+}
+
