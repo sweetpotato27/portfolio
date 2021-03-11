@@ -1,7 +1,9 @@
 import _ from 'lodash';
 import $ from 'jquery';
 import './style.scss';
-import Portrait from './portfolio-portrait.png'
+import Portrait from './portfolio-portrait.png';
+import ghIcon from './icons/GitHub-Mark-64px.png';
+import liIcon from './icons/LI-In-Bug.png';
 
 
 
@@ -68,17 +70,45 @@ function landingMainTransition() {
     const greeting = document.getElementById('greeting');
     const name = document.getElementById('name');
     $(nav).insertBefore($("#main"));
-    $(portrait).fadeOut();
     $(greeting).fadeTo(1000, 0.0000001, () => {
         $(h1).addClass("land-heading-transition");
+        $(portrait).fadeOut();
         setTimeout(() => {
             $(greetDiv).remove();
             $(greeting).remove();
             $(h1).removeClass();
             $(h1).addClass('nav-heading');
             $(nav).append(h1);
+            socialLinks(nav);
         }, 1100)
     });
+}
+
+function socialLinks(nav) {
+    const div = document.createElement('div');
+    const linkedin = document.createElement('a');
+    const linkedinIcon = document.createElement('img');
+    const github = document.createElement('a');
+    const githubIcon = document.createElement('img');
+
+    div.setAttribute('id', 'nav-links-div');
+    linkedin.classList.add('nav-link');
+    github.classList.add('nav-link');
+    linkedin.href = "https://www.linkedin.com/in/dylan-brinkman-matthews/";
+    github.href = "https://github.com/sweetpotato27";
+    linkedinIcon.classList.add('nav-link-icon');
+    githubIcon.classList.add('nav-link-icon');
+    linkedinIcon.src = liIcon;
+    githubIcon.src = ghIcon;
+
+
+    $(linkedin).append(linkedinIcon);
+    $(github).append(githubIcon);
+    $(div).append(linkedin, github);
+    $(nav).append(div);
+
+    $(linkedinIcon).toggleClass('show-icon');
+    $(githubIcon).toggleClass('show-icon');
 }
 
 

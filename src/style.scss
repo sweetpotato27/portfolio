@@ -28,10 +28,32 @@ body {
     width: 100vw;
     top: 1.8em;
     font-size: 1em;
+    justify-content: space-between;
 }
 .nav-heading {
     font-size: 1em;
     padding-left: 2.4em;
+}
+#nav-links-div {
+    display: flex;
+    margin-right: 4em;
+    justify-content: space-between;
+}
+a.nav-link{
+    padding-top: 0.5em;
+    margin: 0 0.6em;
+    min-width: 32px;
+    min-height: 32px;
+}
+.nav-link-icon {
+    cursor: pointer;
+    max-width: 4px;
+    max-height: 4px;
+    transition: all 5000ms linear;
+}
+.show-icon {
+    min-width: 32px;
+    min-height: 32px;
 }
 
 .land-heading {
