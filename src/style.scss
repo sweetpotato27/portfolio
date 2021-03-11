@@ -22,9 +22,33 @@ body {
     transition: transform 3000ms linear, opacity 3000ms linear;
 }
 
-.greeting {
+#nav {
     position: fixed;
+    display: flex;
+    width: 100vw;
+    top: 1.8em;
+    font-size: 1em;
+}
+.nav-heading {
+    font-size: 1em;
+    padding-left: 2.4em;
+}
+
+.land-heading {
+    position: fixed;
+    font-size: 40px;
     top: 10em;
     left: 50px;
+    transition: top 1000ms, left 1000ms, font-size 1000ms;
 }
+.land-heading-transition {
+    top: 2em;
+    left: -5em;
+    font-size: 1em;
+}
+
+
+
+
+
 
