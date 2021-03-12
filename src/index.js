@@ -1,9 +1,13 @@
 import _ from 'lodash';
 import $ from 'jquery';
 import './style.scss';
-import Portrait from './portfolio-portrait.png';
+import Portrait from './images/portfolio-portrait.png';
 import ghIcon from './icons/GitHub-Mark-64px.png';
 import liIcon from './icons/LI-In-Bug.png';
+import quorImage from './images/quoridor.jpg';
+import mazeImage from './images/maze-finished.jpg';
+import moonImage from './images/moonlessnight.jpg';
+import finImage from './images/fingram.jpg';
 
 
 
@@ -74,12 +78,15 @@ function landingMainTransition() {
         $(h1).addClass("land-heading-transition");
         $(portrait).fadeOut();
         setTimeout(() => {
+            /** after the name transition is complete do the following */
+            $(portrait).remove();
             $(greetDiv).remove();
             $(greeting).remove();
             $(h1).removeClass();
             $(h1).addClass('nav-heading');
             $(nav).append(h1);
             socialLinks(nav);
+            mainLayout();
         }, 1100)
     });
 }
@@ -104,11 +111,91 @@ function socialLinks(nav) {
 
     $(linkedin).append(linkedinIcon);
     $(github).append(githubIcon);
-    $(div).append(linkedin, github);
+    $(div).append(github, linkedin);
     $(nav).append(div);
 
     $(linkedinIcon).toggleClass('show-icon');
     $(githubIcon).toggleClass('show-icon');
+    $(linkedinIcon).fadeTo(100, 1);
+    $(githubIcon).fadeTo(100, 1);
+}
+
+function mainLayout() {
+    const main = document.getElementById('main');
+    const mainNav = document.createElement('div');
+    const projects = document.createElement('span');
+    const contact = document.createElement('span');
+    const about = document.createElement('span');
+
+    mainNav.setAttribute('id', 'main-nav');
+    projects.classList.add('main-nav-link');
+    contact.classList.add('main-nav-link');
+    about.classList.add('main-nav-link');
+
+    projects.innerHTML = "projects";
+    contact.innerHTML = "contact";
+    about.innerHTML = "about";
+
+    $(mainNav).append(projects, about, contact);
+    $(main).append(mainNav);
+
+    $(projects).fadeTo(350, 1, () => {
+        $(about).fadeTo(350, 1, () => {
+            $(contact).fadeTo(350, 1); 
+        });
+    });
+
+    projects.addEventListener('click', (e) => {
+        console.log(e.target.innerHTML);
+        $(mainNav).remove();
+        showProjects();
+    });
+    contact.addEventListener('click', (e) => {
+        console.log(e.target.innerHTML);
+    });
+    about.addEventListener('click', (e) => {
+        console.log(e.target.innerHTML);
+    });
+}
+
+function showProjects() {
+    const main = document.getElementById('main');
+    const projects = document.createElement('div');
+    const quoridor = document.createElement('div');
+    const quorImg = document.createElement('img');
+    const maze = document.createElement('div');
+    const mazeImg = document.createElement('img');
+    const moonless = document.createElement('div');
+    const moonImg = document.createElement('img');
+    const fingram = document.createElement('div');
+    const finImg = document.createElement('img');
+
+    projects.setAttribute('id', 'projects-div');
+    quoridor.classList.add('project-div');
+    maze.classList.add('project-div');
+    moonless.classList.add('project-div');
+    fingram.classList.add('project-div');
+
+
+    quorImg.src = quorImage;
+    mazeImg.src = mazeImage;
+    moonImg.src = moonImage;
+    finImg.src = finImage;
+
+    $(quoridor).append(`<a href=""></a>`).children().append(quorImg);
+    $(maze).append(`<a href="https://sweetpotato27.github.io/maze-generator/"></a>`).children().append(mazeImg);
+    $(moonless).append(`<a href="http://moonless-night.herokuapp.com/game"></a>`).children().append(moonImg);
+    $(fingram).append(`<a href="https://dylanmatthewsfinstagram.herokuapp.com/"></a>`).children().append(finImg);
+    $(projects).append(quoridor, maze, moonless, fingram);
+    $(main).append(projects);
+}
+
+function showContact() {
+
+}
+
+function showAbout() {
+    
 }
 
 
