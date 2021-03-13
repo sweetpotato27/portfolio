@@ -182,7 +182,7 @@ function showProjects() {
     moonImg.src = moonImage;
     finImg.src = finImage;
 
-    $(quoridor).append(`<a href=""></a>`).children().append(quorImg);
+    $(quoridor).append(`<a href="https://quoridor-portfolio-project.herokuapp.com/"></a>`).children().append(quorImg);
     $(maze).append(`<a href="https://sweetpotato27.github.io/maze-generator/"></a>`).children().append(mazeImg);
     $(moonless).append(`<a href="http://moonless-night.herokuapp.com/game"></a>`).children().append(moonImg);
     $(fingram).append(`<a href="https://dylanmatthewsfinstagram.herokuapp.com/"></a>`).children().append(finImg);
