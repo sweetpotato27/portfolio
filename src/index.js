@@ -150,11 +150,13 @@ function mainLayout() {
         $(mainNav).remove();
         showProjects();
     });
-    contact.addEventListener('click', (e) => {
-        console.log(e.target.innerHTML);
-    });
     about.addEventListener('click', (e) => {
         console.log(e.target.innerHTML);
+    });
+    contact.addEventListener('click', (e) => {
+        console.log(e.target.innerHTML);
+        $(mainNav).remove();
+        showContact();
     });
 }
 
@@ -182,7 +184,7 @@ function showProjects() {
     moonImg.src = moonImage;
     finImg.src = finImage;
 
-    $(quoridor).append(`<a href="https://quoridor-portfolio-project.herokuapp.com/"></a>`).children().append(quorImg);
+    $(quoridor).append(`<a href="https://quoridor-portfolio-project.herokuapp.com/ "></a>`).children().append(quorImg);
     $(maze).append(`<a href="https://sweetpotato27.github.io/maze-generator/"></a>`).children().append(mazeImg);
     $(moonless).append(`<a href="http://moonless-night.herokuapp.com/game"></a>`).children().append(moonImg);
     $(fingram).append(`<a href="https://dylanmatthewsfinstagram.herokuapp.com/"></a>`).children().append(finImg);
@@ -191,7 +193,37 @@ function showProjects() {
 }
 
 function showContact() {
+    const main = document.getElementById('main');
+    const formDiv = document.createElement('div');
+    const form = document.createElement('form');
+    const name = document.createElement('input');
+    const email = document.createElement('input');
+    const message = document.createElement('input');
+    const submit = document.createElement('input');
+    const reset = document.createElement('input');
+    form.setAttribute('action', 'mailto:matthewsdb34@gmail.com');
+    form.setAttribute('method', 'post');
+    form.setAttribute('enctype', 'text/plain');
+    name.type = "text";
+    name.name = "name";
+    email.type = "text";
+    email.name = "name";
+    message.type = "text";
+    message.name = "name";
+    submit.type = "submit";
+    submit.value = "Send";
+    reset.type = "reset";
+    reset.value = "Reset";
 
+    $(form).append("Name:", $("<br>"),
+                    name, $("<br>"),
+                    "Email:", $("<br>"), 
+                    email, $("<br>"),
+                    "Message:", $("<br>"), 
+                    message, $("<br>"), 
+                    submit, reset);
+    $(formDiv).append(form);
+    $(main).append(formDiv);
 }
 
 function showAbout() {
