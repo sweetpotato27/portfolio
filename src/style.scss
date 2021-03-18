@@ -112,6 +112,13 @@ a.nav-link{
         }
     }
 }
+#page-nav {
+    display: flex;
+}
+.page-link {
+    cursor: pointer;
+    margin: auto 1em 0 1em;
+}
 
 .land-heading {
     position: fixed;
@@ -124,6 +131,15 @@ a.nav-link{
     top: 2em;
     left: -5em;
     font-size: 1em;
+}
+
+/* about page */
+#about-div {
+    margin: 3em auto;
+    width: 71%;
+    max-width: 769px;
+    font-size: 1.3em;
+    line-height: 1.3em;
 }
 
 

@@ -72,7 +72,9 @@ function landingMainTransition() {
     const greetDiv = document.getElementById('greeting-div');
     const h1 = document.getElementById('heading');
     const greeting = document.getElementById('greeting');
-    const name = document.getElementById('name');
+    const div = document.createElement('div'); /* used for future navigation */
+    div.setAttribute('id', 'page-nav');
+
     $(nav).insertBefore($("#main"));
     $(greeting).fadeTo(1000, 0.0000001, () => {
         $(h1).addClass("land-heading-transition");
@@ -84,7 +86,7 @@ function landingMainTransition() {
             $(greeting).remove();
             $(h1).removeClass();
             $(h1).addClass('nav-heading');
-            $(nav).append(h1);
+            $(nav).append(h1, div);
             socialLinks(nav);
             mainLayout();
         }, 1100)
@@ -152,6 +154,8 @@ function mainLayout() {
     });
     about.addEventListener('click', (e) => {
         console.log(e.target.innerHTML);
+        $(mainNav).remove();
+        showAbout();
     });
     contact.addEventListener('click', (e) => {
         console.log(e.target.innerHTML);
@@ -171,6 +175,8 @@ function showProjects() {
     const moonImg = document.createElement('img');
     const fingram = document.createElement('div');
     const finImg = document.createElement('img');
+
+    changeNav(['about', 'contact'], main);
 
     projects.setAttribute('id', 'projects-div');
     quoridor.classList.add('project-div');
@@ -201,6 +207,9 @@ function showContact() {
     const message = document.createElement('input');
     const submit = document.createElement('input');
     const reset = document.createElement('input');
+
+    changeNav(['projects', 'about'], main);
+
     form.setAttribute('action', 'mailto:matthewsdb34@gmail.com');
     form.setAttribute('method', 'post');
     form.setAttribute('enctype', 'text/plain');
@@ -227,10 +236,63 @@ function showContact() {
 }
 
 function showAbout() {
-    
+    const main = document.getElementById('main');
+    const aboutDiv = document.createElement('div');
+
+    changeNav(['projects', 'contact'], main);
+
+    aboutDiv.setAttribute('id', 'about-div');
+    aboutDiv.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
+                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
+                        "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
+                        "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+                        "mollit anim id est laborum.";
+
+    $(main).append(aboutDiv);
 }
 
+function changeNav(elements, main) {
+    const div = document.getElementById('page-nav');
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+    for(let i = 0; i < elements.length; i++) {
+        console.log("elements[i] => " + elements[i]);
+        const span = document.createElement('span');
+        span.innerText = elements[i];
+        span.classList.add('page-link');
 
+        if (elements[i] === 'projects') {
+            span.addEventListener('click', (e) => {
+                console.log(e.target.innerHTML);
+                while (main.firstChild) {
+                    main.removeChild(main.firstChild);
+                }
+                showProjects();
+            });
+        } else if (elements[i] === 'about') {
+            span.addEventListener('click', (e) => {
+                console.log(e.target.innerHTML);
+                while (main.firstChild) {
+                    main.removeChild(main.firstChild);
+                }
+                showAbout();
+            });
+        } else if (elements[i] === 'contact') {
+            span.addEventListener('click', (e) => {
+                console.log(e.target.innerHTML);
+                while (main.firstChild) {
+                    main.removeChild(main.firstChild);
+                }
+                showContact();
+            });
+        } else {}
+
+        $(div).append(span);
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const main = document.createElement('div');
