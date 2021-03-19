@@ -210,6 +210,8 @@ function showContact() {
 
     changeNav(['projects', 'about'], main);
 
+    formDiv.setAttribute('id', 'contact-form-div');
+
     form.setAttribute('action', 'mailto:matthewsdb34@gmail.com');
     form.setAttribute('method', 'post');
     form.setAttribute('enctype', 'text/plain');
@@ -217,7 +219,7 @@ function showContact() {
     name.name = "name";
     email.type = "text";
     email.name = "name";
-    message.type = "text";
+    message.type = "textbox";
     message.name = "name";
     submit.type = "submit";
     submit.value = "Send";
@@ -238,17 +240,29 @@ function showContact() {
 function showAbout() {
     const main = document.getElementById('main');
     const aboutDiv = document.createElement('div');
+    const book1 = document.createElement('span');
+    const book2 = document.createElement('span');
+    book1.innerText = "Pharmako-AI";
+    book2.innerText = "Godel, Escher, Bach: an Eternal Golden Braid";
+    const about = `Born in Stockton, California.  I achieved a B.A. from St. Edward's University in Austin, ` +
+    `Texas and also briefly attended Arizona State University.  After university I worked in a couple of bars ` +
+    `in Sacramento, California.  Currently, I am focusing on coding and learning more about web development ` +
+    `and skateboarding.  I also enjoy building things out of wood, like ramps and cat trees for my three ` +
+    `purrfect cats.  I enjoy reading books like Pharmako-AI by K Allado-McDowell and Godel, Escher, Bach: an Eternal Golden Braid ` +
+    `by Douglas R. Hofstadter.  I enjoy listening to music like Bach, Frank Ocean, ` +
+    `Bad Brains, J Dilla, Aphex Twin, The Slits, Void and much more.  In 2019 I attended App Academy, a coding boot camp,` +
+    `which was my first introduction to web development.  After graduating, I did not feel comfortable enough to enter ` +
+    `the job market and I moved back to Sacramento to work at Kru Contemporary Japanese Cuisine.  Then everything shut down. ` + 
+    `In February of 2021, I decided to commit myself to getting a junior web developer job.  I have been improving my HTML, ` +
+    `CSS and JavaScript abilities while newly learning technologies like Sockets.io and reinforcing my knowledge of technologies ` +
+    `like Webpack.  I have programmed in Java, C#, Python, Ruby, VBA, and JavaScript which has given me confidence to learn new` +
+    `computer languages and technologies.  To reach out to me check out the contact tab!`
+
 
     changeNav(['projects', 'contact'], main);
 
     aboutDiv.setAttribute('id', 'about-div');
-    aboutDiv.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
-                        "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
-                        "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
-                        "mollit anim id est laborum.";
+    aboutDiv.innerText = about;
 
     $(main).append(aboutDiv);
 }
