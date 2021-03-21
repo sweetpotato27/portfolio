@@ -43,20 +43,57 @@ body {
     width: 300px;
     height: 300px;
     overflow: hidden;
+    position: relative;
     border-radius: 50%;
     margin: 1.5em;
     transition: all 200ms ease-in-out;
     &:hover {
         transform: scale(1.3);
     }
+    &:hover .project-banner {
+        opacity: 1;
+    }
+    &:hover img {
+        opacity: 0.3;
+    }
     & > a {
         width: 100%;
         height: 100%;
         & > img {
+            transition: opacity 200ms ease;
             width: 110%;
             height: 110%;
         }
     }
+}
+.project-banner {
+    opacity: 0;
+    transition: opacity 200ms ease;
+    position: absolute;
+    text-align: center;
+    &.quoridor {
+        top: 45%;
+        left: 33%;
+    }
+    &.maze {
+        top: 45%;
+        left: 20%;
+    }
+    &.moonless {
+        top: 40%;
+        left: 25%;
+    }
+    &.fingram {
+        top: 40%;
+        left: 30%;
+    }
+
+}
+.project-banner-text {
+    background: white;
+    color: black;
+    font-size: 1.1em;
+    padding: 1em;
 }
 
 #portrait-div {

@@ -168,32 +168,60 @@ function showProjects() {
     const main = document.getElementById('main');
     const projects = document.createElement('div');
     const quoridor = document.createElement('div');
+    const quorBanner = document.createElement('div');
+    const quorBannerText = document.createElement('div');
     const quorImg = document.createElement('img');
     const maze = document.createElement('div');
+    const mazeBanner = document.createElement('div');
+    const mazeBannerText = document.createElement('div');
     const mazeImg = document.createElement('img');
     const moonless = document.createElement('div');
+    const moonBanner = document.createElement('div');
+    const moonBannerText = document.createElement('div');
     const moonImg = document.createElement('img');
     const fingram = document.createElement('div');
+    const finBanner = document.createElement('div');
+    const finBannerText = document.createElement('div');
     const finImg = document.createElement('img');
 
     changeNav(['about', 'contact'], main);
 
     projects.setAttribute('id', 'projects-div');
     quoridor.classList.add('project-div');
+    quorBanner.classList.add('project-banner', 'quoridor');
+    quorBannerText.classList.add('project-banner-text');
     maze.classList.add('project-div');
+    mazeBanner.classList.add('project-banner', 'maze');
+    mazeBannerText.classList.add('project-banner-text');
     moonless.classList.add('project-div');
+    moonBanner.classList.add('project-banner', 'moonless');
+    moonBannerText.classList.add('project-banner-text');
     fingram.classList.add('project-div');
+    finBanner.classList.add('project-banner', 'fingram');
+    finBannerText.classList.add('project-banner-text');
 
-
+    quorBannerText.innerText = "Quoridor";
+    mazeBannerText.innerText = "Lifepath Generator";
+    moonBannerText.innerText = "Moonless Night";
+    finBannerText.innerText = "Finstagram";
+    
     quorImg.src = quorImage;
     mazeImg.src = mazeImage;
     moonImg.src = moonImage;
     finImg.src = finImage;
-
-    $(quoridor).append(`<a href="https://quoridor-portfolio-project.herokuapp.com/ "></a>`).children().append(quorImg);
+    
+    $(quoridor).append(`<a href="https://quoridor-portfolio-project.herokuapp.com/"></a>`).children().append(quorImg);
+    $(quorBanner).append(quorBannerText);
+    $(quoridor).append(quorBanner);
     $(maze).append(`<a href="https://sweetpotato27.github.io/maze-generator/"></a>`).children().append(mazeImg);
+    $(mazeBanner).append(mazeBannerText);
+    $(maze).append(mazeBanner);
     $(moonless).append(`<a href="http://moonless-night.herokuapp.com/game"></a>`).children().append(moonImg);
+    $(moonBanner).append(moonBannerText);
+    $(moonless).append(moonBanner);
     $(fingram).append(`<a href="https://dylanmatthewsfinstagram.herokuapp.com/"></a>`).children().append(finImg);
+    $(finBanner).append(finBannerText);
+    $(fingram).append(finBanner);
     $(projects).append(quoridor, maze, moonless, fingram);
     $(main).append(projects);
 }
@@ -204,7 +232,7 @@ function showContact() {
     const form = document.createElement('form');
     const name = document.createElement('input');
     const email = document.createElement('input');
-    const message = document.createElement('input');
+    const message = document.createElement('textarea');
     const submit = document.createElement('input');
     const reset = document.createElement('input');
 
@@ -218,9 +246,8 @@ function showContact() {
     name.type = "text";
     name.name = "name";
     email.type = "text";
-    email.name = "name";
-    message.type = "textbox";
-    message.name = "name";
+    email.name = "email";
+    message.name = "message";
     submit.type = "submit";
     submit.value = "Send";
     reset.type = "reset";
@@ -240,29 +267,23 @@ function showContact() {
 function showAbout() {
     const main = document.getElementById('main');
     const aboutDiv = document.createElement('div');
-    const book1 = document.createElement('span');
-    const book2 = document.createElement('span');
-    book1.innerText = "Pharmako-AI";
-    book2.innerText = "Godel, Escher, Bach: an Eternal Golden Braid";
-    const about = `Born in Stockton, California.  I achieved a B.A. from St. Edward's University in Austin, ` +
-    `Texas and also briefly attended Arizona State University.  After university I worked in a couple of bars ` +
-    `in Sacramento, California.  Currently, I am focusing on coding and learning more about web development ` +
-    `and skateboarding.  I also enjoy building things out of wood, like ramps and cat trees for my three ` +
-    `purrfect cats.  I enjoy reading books like Pharmako-AI by K Allado-McDowell and Godel, Escher, Bach: an Eternal Golden Braid ` +
-    `by Douglas R. Hofstadter.  I enjoy listening to music like Bach, Frank Ocean, ` +
-    `Bad Brains, J Dilla, Aphex Twin, The Slits, Void and much more.  In 2019 I attended App Academy, a coding boot camp,` +
-    `which was my first introduction to web development.  After graduating, I did not feel comfortable enough to enter ` +
-    `the job market and I moved back to Sacramento to work at Kru Contemporary Japanese Cuisine.  Then everything shut down. ` + 
-    `In February of 2021, I decided to commit myself to getting a junior web developer job.  I have been improving my HTML, ` +
-    `CSS and JavaScript abilities while newly learning technologies like Sockets.io and reinforcing my knowledge of technologies ` +
-    `like Webpack.  I have programmed in Java, C#, Python, Ruby, VBA, and JavaScript which has given me confidence to learn new` +
-    `computer languages and technologies.  To reach out to me check out the contact tab!`
+    const paraOne = document.createElement('p');
+    const paraTwo = document.createElement('p');
+    const paraThree = document.createElement('p');
+    const paraFour = document.createElement('p');
+    const thankYou = document.createElement('p');
+
+    paraOne.innerText = `My coding strengths are: a divergent and versatile approach to problem solving, perseverance to push through mental and technological walls, and a solid grounding on teaching myself new information.  I have experience with: Ruby on Rails, React.js, React Redux, Express.js, Node.js, Webpack, Socket.io, jQuery, HTML Canvas, Heroku, MongoDB, PostgreSQL and Git. I am always strengthening my HTML, CSS and JavaScript by building websites and taking college courses.`;
+    paraTwo.innerText = `Quoridor is my most recent project.  I use socket.io and express.js to allow client to client communication and implemented rooms to make starting a game simple and errorless.  This project game me solid experience with the organization of my code through focusing on OOP principles and by separating the code that computes the game logic from the code that renders the game state.`;
+    paraThree.innerText = `I am most interested in machine learning and exploring ideas in consciousness from an artistic perspective.  Though I do not know how to build such models yet, I enjoy reading about the subject in articles and books like, "Pharmako-AI" by K Allado-McDowell and "Godel, Esher, Bach: an Eternal Golden Braid" by Douglas R. Hofstadter.  I also have a passion for creating a fluid and captivating user experiences.`;
+    paraFour.innerText = `In 2017 I graduated from St. Edward’s University with a B.A. in Interactive Game Studies.  In 2019, I graduated from App Academy, a web development boot camp.  In February of 2021, I decided to commit myself to the industry and my goal is to secure a position as a junior web developer.`;
+    thankYou.innerText = `Thank you for checking out my work :)`;
 
 
     changeNav(['projects', 'contact'], main);
 
     aboutDiv.setAttribute('id', 'about-div');
-    aboutDiv.innerText = about;
+    $(aboutDiv).append(paraOne, paraTwo, paraThree, paraFour, thankYou);
 
     $(main).append(aboutDiv);
 }
