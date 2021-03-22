@@ -155,6 +155,7 @@ a.nav-link{
 .page-link {
     cursor: pointer;
     margin: auto 1em 0 1em;
+    font-size: 1.25em;
 }
 
 .land-heading {
@@ -186,6 +187,154 @@ a.nav-link{
     line-height: 1.3em;
 }
 
+/* media queries */
+@media only screen and (min-width: 2500px) {
+    #portrait {
+        min-height: 100vh;
+        padding-left: 20em;
+    }
+    .land-heading {
+        font-size: 50px;
+    }
+    .nav-heading {
+        font-size: 1.8em;
+    }
+    .land-heading-transition {
+        font-size: 1.8em;
+        top: 1.15em;
+        left: -7.25em;
+    }
+    #nav-links-div {
+        margin-right: 3em;
+    }
+    a.nav-link{
+        padding: 0.5em 1em 1em 1em;
+        margin: 0 0.6em;
+        min-width: 48px;
+        min-height: 48px;
+    }
+    .nav-link-icon.show-icon {
+        min-width: 48px;
+        min-height: 48px;
+    }
+    #main-nav {
+        width: 200px;
+        height: 250px;
+    }
+    .main-nav-link {
+        font-size: 3em;
+    }
+    .page-link {
+        font-size: 1.7em;
+    }
+    #greeting {
+        margin-left: 2em;
+    }
+    #about-div p {
+        font-size: 1.25em;
+        line-height: 1.25em;
+    }
+}
+@media only screen and (max-width: 2499px) and (min-width: 1441px) {
+    .page-link{
+        font-size: 1.5em;
+    } 
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+    .land-heading {
+        font-size: 30px;
+    }
+    .land-heading-transition {
+        font-size: 1em;
+    }
+    a.nav-link{
+        min-width: 24px;
+        min-height: 24px;
+    }
+    .nav-link-icon.show-icon {
+        min-width: 24px;
+        min-height: 24px;
+    }
+    #portrait {
+        padding-left: 0;
+    }
+    #nav-links-div {
+        margin-right: 2em;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .land-heading {
+        font-size: 1.5em;
+        left: 25px;
+    }
+    .land-heading-transition {
+        font-size: 1em;
+        top: 1.08em;
+        left: 24px;
+    }
+    .nav-heading {
+        padding-left: 1em;
+    }
+    #name {
+        display: block;
+    }
+    #portrait {
+        padding-left: 0;
+        left: -75%;
+    }
+    #nav-links-div {
+        margin-right: 1em;
+    }
+    a.nav-link{
+        min-width: 20px;
+        min-height: 20px;
+    }
+    .nav-link-icon.show-icon {
+        min-width: 20px;
+        min-height: 20px;
+    }
+    #main-nav {
+        margin: 15vh auto;
+    }
+    .main-nav-link {
+        font-size: 1.25em;
+    }
+    .page-link{
+        font-size: 1em;
+    } 
+    #about-div {
+        font-size: 1em;
+    }
+    #projects-div {
+        padding-top: 1em;
+    }
+    .project-div {
+        width: 200px;
+        height: 200px;
+    }
+    .project-banner-text {
+        padding: 0.5em;
+        font-size: 1em;
+    }
+    .project-banner.quoridor {
+        top: 42%;
+        left: 28%;
+    }
+    .project-banner.maze {
+        top: 42%;
+        left: 13%;
+    }
+    .project-banner.moonless {
+        top: 42%;
+        left: 17%;
+    }
+    .project-banner.fingram {
+        top: 40%;
+        left: 28%;
+    }
+}
 
 
 
