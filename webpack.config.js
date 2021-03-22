@@ -12,12 +12,13 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Portfolio',
+            title: 'Dylan',
         }),
     ],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: "/portfolio/",
         clean: true,
     },
     module: {
