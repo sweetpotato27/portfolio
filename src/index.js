@@ -240,7 +240,7 @@ function showContact() {
 
     formDiv.setAttribute('id', 'contact-form-div');
 
-    form.setAttribute('action', 'mailto:matthewsdb34@gmail.com');
+    form.setAttribute('action', 'mailto:dbmsoftware27@gmail.com');
     form.setAttribute('method', 'post');
     form.setAttribute('enctype', 'text/plain');
     name.type = "text";
