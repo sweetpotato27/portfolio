@@ -65,7 +65,6 @@ function sayHello() {
 }
 
 function landingMainTransition() {
-    console.log("transitioning....");
     const nav = document.createElement('nav');
     nav.setAttribute('id', 'nav');
     const portrait = document.getElementById('portrait-div');
@@ -148,17 +147,14 @@ function mainLayout() {
     });
 
     projects.addEventListener('click', (e) => {
-        console.log(e.target.innerHTML);
         $(mainNav).remove();
         showProjects();
     });
     about.addEventListener('click', (e) => {
-        console.log(e.target.innerHTML);
         $(mainNav).remove();
         showAbout();
     });
     contact.addEventListener('click', (e) => {
-        console.log(e.target.innerHTML);
         $(mainNav).remove();
         showContact();
     });
@@ -294,14 +290,12 @@ function changeNav(elements, main) {
         div.removeChild(div.firstChild);
     }
     for(let i = 0; i < elements.length; i++) {
-        console.log("elements[i] => " + elements[i]);
         const span = document.createElement('span');
         span.innerText = elements[i];
         span.classList.add('page-link');
 
         if (elements[i] === 'projects') {
             span.addEventListener('click', (e) => {
-                console.log(e.target.innerHTML);
                 while (main.firstChild) {
                     main.removeChild(main.firstChild);
                 }
@@ -309,7 +303,6 @@ function changeNav(elements, main) {
             });
         } else if (elements[i] === 'about') {
             span.addEventListener('click', (e) => {
-                console.log(e.target.innerHTML);
                 while (main.firstChild) {
                     main.removeChild(main.firstChild);
                 }
@@ -317,7 +310,6 @@ function changeNav(elements, main) {
             });
         } else if (elements[i] === 'contact') {
             span.addEventListener('click', (e) => {
-                console.log(e.target.innerHTML);
                 while (main.firstChild) {
                     main.removeChild(main.firstChild);
                 }

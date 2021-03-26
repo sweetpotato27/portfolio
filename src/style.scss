@@ -90,6 +90,7 @@ body {
 
 }
 .project-banner-text {
+    cursor: pointer;
     background: white;
     color: black;
     font-size: 1.1em;
@@ -315,6 +316,7 @@ a.nav-link{
         height: 200px;
     }
     .project-banner-text {
+        cursor: pointer;
         padding: 0.5em;
         font-size: 1em;
     }
