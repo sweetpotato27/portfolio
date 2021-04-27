@@ -8,6 +8,7 @@ import quorImage from './images/quoridor.jpg';
 import mazeImage from './images/maze-finished.jpg';
 import moonImage from './images/moonlessnight.jpg';
 import finImage from './images/fingram.jpg';
+import tlImage from './images/thoughtlogue.jpg';
 
 
 
@@ -179,6 +180,10 @@ function showProjects() {
     const finBanner = document.createElement('div');
     const finBannerText = document.createElement('div');
     const finImg = document.createElement('img');
+    const thoughtlogue = document.createElement('div');
+    const tlBanner = document.createElement('div');
+    const tlBannerText = document.createElement('div');
+    const tlImg = document.createElement('img');
 
     changeNav(['about', 'contact'], main);
 
@@ -195,16 +200,21 @@ function showProjects() {
     fingram.classList.add('project-div');
     finBanner.classList.add('project-banner', 'fingram');
     finBannerText.classList.add('project-banner-text');
+    thoughtlogue.classList.add('project-div');
+    tlBanner.classList.add('project-banner', 'thoughtlogue');
+    tlBannerText.classList.add('project-banner-text');
 
     quorBannerText.innerText = "Quoridor";
     mazeBannerText.innerText = "Lifepath Generator";
     moonBannerText.innerText = "Moonless Night";
     finBannerText.innerText = "Finstagram";
+    tlBannerText.innerText = "Thoughtlogue";
     
     quorImg.src = quorImage;
     mazeImg.src = mazeImage;
     moonImg.src = moonImage;
     finImg.src = finImage;
+    tlImg.src = tlImage;
     
     $(quoridor).append(`<a href="https://quoridor-portfolio-project.herokuapp.com/"></a>`).children().append(quorImg);
     $(quorBanner).append(quorBannerText);
@@ -218,7 +228,10 @@ function showProjects() {
     $(fingram).append(`<a href="https://dylanmatthewsfinstagram.herokuapp.com/"></a>`).children().append(finImg);
     $(finBanner).append(finBannerText);
     $(fingram).append(finBanner);
-    $(projects).append(quoridor, maze, moonless, fingram);
+    $(thoughtlogue).append(`<a href="https://thoughtlogue.herokuapp.com/#/"></a>`).children().append(finImg);
+    $(tlBanner).append(tlBannerText);
+    $(thoughtlogue).append(tlBanner);
+    $(projects).append(quoridor, maze, moonless, fingram, thoughtlogue);
     $(main).append(projects);
 }
 
