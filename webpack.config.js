@@ -8,7 +8,7 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
+        contentBase: './docs',
     },
     plugins: [
         new HtmlWebpackPlugin({
