@@ -228,7 +228,7 @@ function showProjects() {
     $(fingram).append(`<a href="https://dylanmatthewsfinstagram.herokuapp.com/"></a>`).children().append(finImg);
     $(finBanner).append(finBannerText);
     $(fingram).append(finBanner);
-    $(thoughtlogue).append(`<a href="https://thoughtlogue.herokuapp.com/#/"></a>`).children().append(finImg);
+    $(thoughtlogue).append(`<a href="https://thoughtlogue.herokuapp.com/#/"></a>`).children().append(tlImg);
     $(tlBanner).append(tlBannerText);
     $(thoughtlogue).append(tlBanner);
     $(projects).append(quoridor, maze, moonless, fingram, thoughtlogue);
