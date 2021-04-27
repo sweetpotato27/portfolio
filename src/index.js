@@ -231,7 +231,7 @@ function showProjects() {
     $(thoughtlogue).append(`<a href="https://thoughtlogue.herokuapp.com/#/"></a>`).children().append(tlImg);
     $(tlBanner).append(tlBannerText);
     $(thoughtlogue).append(tlBanner);
-    $(projects).append(quoridor, maze, moonless, fingram, thoughtlogue);
+    $(projects).append(quoridor, thoughtlogue, maze, moonless, fingram);
     $(main).append(projects);
 }
 
